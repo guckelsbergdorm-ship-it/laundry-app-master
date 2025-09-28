@@ -1,0 +1,36 @@
+.userMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: var(--clr-surface-a5);
+  padding: 6px;
+  gap: 6px;
+  border-radius: 12px;
+  min-width: 120px;
+
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--clr-surface-a40);
+  box-shadow: 0 0 4px var(--clr-surface-a30);
+  z-index: 2000;
+}
+
+.dropdownMenu button {
+  color: var(--text-color);
+  --background-color: transparent !important;
+  text-decoration: none;
+  padding: var(--padding-vertical) calc(var(--padding-horizontal) / 2);
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+

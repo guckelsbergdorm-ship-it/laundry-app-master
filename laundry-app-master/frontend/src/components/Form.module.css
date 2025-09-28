@@ -1,0 +1,97 @@
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center .form {
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  width: min(400px, 100%);
+  background-color: var(--clr-surface-a10);
+  border-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+  .form {
+    width: 100%;
+  }
+}
+
+.form h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.form h2 {
+  padding: .5rem;
+  margin: 0;
+}
+
+.form button {
+  align-self: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.field label {
+  color: var(--clr-surface-a70);
+}
+
+.formInput {
+  all: unset;
+  padding: var(--padding);
+  background: var(--clr-surface-a0);
+  border-radius: .5rem;
+  width: 100%;
+  outline: 2px solid transparent;
+  transition: all .1s;
+  box-shadow: 0 0 0 4px transparent;
+  box-sizing: border-box;
+}
+
+.formInput::placeholder {
+  opacity: 0.5;
+}
+
+.formInput:focus {
+  outline: 2px solid var(--clr-primary-a0);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--clr-primary-a0), transparent);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.errorMessage {
+  border: 1px solid var(--error-color);
+  border-radius: .5rem;
+  background-color: color-mix(in srgb, var(--error-color) 20%, transparent);
+  color: var(--error-color);
+  padding: .5rem;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Remove number button */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

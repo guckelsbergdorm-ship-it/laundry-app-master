@@ -1,0 +1,31 @@
+.tabBar {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: .5rem;
+}
+
+@media (max-width: 767px) {
+  .tabBar {
+    justify-content: stretch;
+  }
+
+  .tab {
+    flex: 1 !important;
+  }
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--clr-surface-tonal-a20);
+  margin-bottom: 1rem;
+}
+
+.tab {
+  --background-color: var(--clr-surface-a10) !important;
+}
+
+.selected {
+  --background-color: var(--clr-surface-a30) !important;
+}

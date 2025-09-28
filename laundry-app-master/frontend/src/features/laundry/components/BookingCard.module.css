@@ -1,0 +1,24 @@
+.bookingCard {
+  background: var(--clr-surface-a10);
+  padding: 2rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.slotText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.ongoingSlot {
+  color: var(--error-color);
+}
+
+.slotEndText {
+  margin-top: -.5em;
+  opacity: .8;
+}

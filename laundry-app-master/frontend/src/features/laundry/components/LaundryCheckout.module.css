@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-surface-a10);
+  border-radius: 2rem;
+  padding: 1rem;
+  min-width: min(500px, 90vw);
+  margin-top: 1rem;
+}
+
+.container h2 {
+  margin: .5rem;
+}
+
+@media(max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.slotsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.slotCard {
+  border-radius: 1rem;
+  padding: var(--padding-horizontal);
+  background-color: var(--clr-surface-a20);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.machineName {
+  font-weight: bold;
+}
+
+.separator {
+  opacity: .5;
+  margin: 0 4px;
+}
+
+.timeSlot {
+  margin-right: 1rem;
+}

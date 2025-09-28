@@ -1,0 +1,41 @@
+.loginFormContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.loginForm {
+  background: var(--clr-surface-a10);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  width: 100%;
+  gap: 1rem;
+}
+
+.loginForm input {
+  color: var(--text-color);
+  opacity: 0.75;
+  font-size: 16px;
+}
+
+.loginForm input::placeholder {
+  opacity: 0.75;
+}
+
+.errorMessage {
+  width: 100%;
+  max-width: 16rem;
+  border: 1px solid var(--error-color);
+  border-radius: 8px;
+  padding: 8px;
+  background-color: color-mix(in srgb, var(--error-color) 10%, transparent);
+  color: var(--error-color);
+}
+

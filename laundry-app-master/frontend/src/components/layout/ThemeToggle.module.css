@@ -1,0 +1,20 @@
+.themeToggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  scale: 1.75;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggle * {
+  color: var(--text-color);
+  transition: color .2s;
+}
+
+.themeToggle:hover * {
+  color: var(--clr-primary-a50);
+}

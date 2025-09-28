@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background-color: var(--clr-surface-a0);
+  border-radius: 8px;
+  border: 1px solid var(--clr-surface-tonal-a50);
+  padding: var(--padding);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.summaryRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tableWrapper {
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid var(--clr-surface-tonal-a30);
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background: var(--clr-surface-tonal-a0);
+}
+
+th, td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--clr-surface-tonal-a20);
+  font-size: 0.9rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--clr-surface-a5);
+}
+
+.counts {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.counts span {
+  background: var(--clr-surface-tonal-a20);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}

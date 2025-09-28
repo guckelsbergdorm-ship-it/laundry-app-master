@@ -1,0 +1,128 @@
+:root {
+  --hover-color: color-mix(in srgb, var(--clr-primary-a0), var(--clr-surface-a0) 40%);
+  --conflict-color:  var(--error-color);
+  --selected-color: var(--clr-primary-a0);
+  --day-col-width: 110px;
+  --header-row-height: 40px;
+  --day-row-height: 90px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gridContainer {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 2px solid var(--clr-surface-a20);
+  -webkit-user-select: none;
+  user-select: none;
+  overscroll-behavior: auto;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: 0;
+  background: var(--clr-surface-a0);
+  box-sizing: border-box;
+}
+
+.weekdayHeader {
+  background: var(--clr-surface-a10);
+  padding: var(--padding);
+  border-right: 1px solid var(--clr-surface-a30);
+  border-bottom: 1px solid var(--clr-surface-a30);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.dayCell {
+  padding: 0;
+  border-right: 1px solid var(--clr-surface-a30);
+  border-bottom: 1px solid var(--clr-surface-a30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: default;
+  text-align: center;
+}
+
+.dayCell:hover {
+  cursor: pointer;
+}
+
+.day {
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0 solid var(--clr-primary-a0);
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.today {
+  font-weight: bold;
+  color: var(--clr-primary-a0);
+}
+
+.pastDay {
+  color: var(--clr-surface-a50);
+  cursor: not-allowed;
+}
+
+.hoveredDay {
+  color: var(--clr-primary-a0);
+  font-weight: bold;
+  background-color: var(--clr-surface-a10);
+  border: 2px solid var(--clr-primary-a0);
+}
+
+.hoveredText {
+  opacity: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transform: translateY(4px);
+  transition: all .2s ease-out;
+}
+
+.hoveredDay .hoveredText,
+.bookedDay .hoveredText,
+.requestedDay .hoveredText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bookedDay {
+  border: 2px solid var(--error-color);
+  background-color: color-mix(in srgb, var(--error-color), var(--clr-surface-a0) 70%);
+  cursor: not-allowed !important;
+}
+
+.requestedDay {
+  --requested-color: #fcb738;
+  border: 2px solid var(--requested-color);
+  background-color: color-mix(in srgb, var(--requested-color), var(--clr-surface-a0) 90%);
+  cursor: not-allowed !important;
+}
+
+.lastInRow {
+  border-right: none;
+}
+
+.lastInColumn {
+  border-bottom: none;
+}
+

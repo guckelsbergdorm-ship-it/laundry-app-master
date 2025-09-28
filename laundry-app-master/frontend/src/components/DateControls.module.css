@@ -1,0 +1,31 @@
+.dateControls {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 767px) {
+  .dateControls {
+    display: flex;
+    width: 100%;
+    gap: .5rem;
+    margin-bottom: .5rem;
+  }
+
+  .dateControls > :nth-child(2) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .dateControls > :nth-child(2) {
+    min-width: 185px;
+  }
+}
+
+.dateWeekday {
+  font-weight: 400;
+  color: var(--clr-primary-a50);
+  text-align: center;
+}

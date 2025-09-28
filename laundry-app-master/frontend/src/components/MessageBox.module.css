@@ -1,0 +1,19 @@
+.messageBox {
+  border: 1px solid var(--box-color);
+  border-radius: .5rem;
+  background-color: color-mix(in srgb, var(--box-color) 20%, transparent);
+  color: var(--box-color);
+  padding: .5rem;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 400px;
+}
+
+.error {
+  --box-color: var(--error-color);
+}
+
+.success {
+  --box-color: var(--clr-primary-a40);
+}

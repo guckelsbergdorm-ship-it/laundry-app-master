@@ -1,0 +1,771 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R] /Count 7 /MediaBox [0 0 595 842] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 10 0 R /MediaBox [0 0 595 842] >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 11 0 R /MediaBox [0 0 595 842] >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 12 0 R /MediaBox [0 0 595 842] >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 13 0 R /MediaBox [0 0 595 842] >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 14 0 R /MediaBox [0 0 595 842] >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 15 0 R /MediaBox [0 0 595 842] >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 17 0 R >> >> /Contents 16 0 R /MediaBox [0 0 595 842] >>
+endobj
+10 0 obj
+<< /Length 3314 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+(Laundry App - Developer Implementation Plan) Tj
+T*
+(Prepared: 2025-09-28) Tj
+T*
+( ) Tj
+T*
+(Timeline Constraint: Complete delivery in 4 consecutive working days \(high-compression plan\).) Tj
+T*
+( ) Tj
+T*
+(Team Assignments:) Tj
+T*
+(  Developer A - Backend Lead \(Spring Boot, PostgreSQL\)) Tj
+T*
+(  Developer B - Frontend Lead \(React, TypeScript\)) Tj
+T*
+(  Developer C - Full-Stack & QA \(Tooling, Automation, Tests\)) Tj
+T*
+( ) Tj
+T*
+(Objective: finish all outstanding features referenced in the repository—placeholder pages,) Tj
+T*
+(TODOs, empty modules—and production-harden the platform within four working days. Teams execute) Tj
+T*
+(in parallel with twice-daily integration checkpoints to sustain speed and quality.) Tj
+T*
+( ) Tj
+T*
+(Scope: complete laundry slot overrides, rooftop booking history, dashboard metrics, presidium) Tj
+T*
+(content, supporting backend services, mock data generation, automated pipelines, and) Tj
+T*
+(observability updates.) Tj
+T*
+( ) Tj
+T*
+(Execution Timeline \(4-Day Target\):) Tj
+T*
+(  - Day 1 – Kickoff & Foundation Build: Morning: joint architecture session, finalize API) Tj
+T*
+(    contracts, confirm database migrations. Afternoon: Developer A begins BE-01 overrides and) Tj
+T*
+(    seeds BE-02 structures; Developer B scaffolds dashboard and admin UIs against mocked data;) Tj
+T*
+(    Developer C prepares mock data schema \(FS-01\) and dev tooling \(FS-04\).) Tj
+T*
+(  - Day 2 – Backend Completion & Frontend Wiring: Developer A wraps BE-01, delivers BE-02) Tj
+T*
+(    rooftop history, and exposes initial BE-03 metrics contract. Developer B integrates FE-01) Tj
+T*
+(    dashboard and FE-03 buffer fix using live endpoints, begins FE-02 override UI. Developer C) Tj
+T*
+(    implements mock data script \(FS-01\) and initiates CI scaffolding \(FS-03\).) Tj
+T*
+(  - Day 3 – Feature Finalization & QA Prep: Developer A ships BE-03 dashboard metrics, BE-04) Tj
+T*
+(    presidium backend, and starts BE-05 tests. Developer B completes FE-02 overrides UI, FE-04) Tj
+T*
+(    rooftop history view, and FE-05 presidium page; begins FE-06 polish. Developer C builds e2e) Tj
+T*
+(    suite \(FS-02\) leveraging mock data and advances FS-03 pipeline & FS-04 tooling.) Tj
+T*
+(  - Day 4 – Hardening, Observability & Sign-off: Morning regression using e2e suite, fix) Tj
+T*
+(    defects. Developer A finalizes BE-05 coverage; Developer B finishes FE-06 polish. Developer) Tj
+T*
+(    C completes CI/CD pipeline \(FS-03\) and observability enhancements \(FS-05\). Afternoon) Tj
+T*
+(    stakeholder demo, release checklist, documentation updates.) Tj
+T*
+( ) Tj
+T*
+(Parallelization Notes:) Tj
+T*
+(  - Twice-daily syncs \(09:00 kickoff, 16:00 integration review\) to realign tasks.) Tj
+T*
+(  - Feature branches merged before 18:00 to allow nightly automated runs.) Tj
+T*
+(  - Pairing sessions planned for overrides \(A+B\) and QA automation \(B+C\) to remove blockers) Tj
+T*
+(    quickly.) Tj
+T*
+( ) Tj
+T*
+(Cross-Team Dependencies:) Tj
+T*
+(  - BE-01 must precede FE-02 for admin slot management UI.) Tj
+T*
+(  - BE-02 enables FE-04 rooftop history experience.) Tj
+T*
+(  - BE-03 feeds FE-01 dashboard metrics.) Tj
+T*
+(  - BE-04 supplies data to FE-05 presidium page.) Tj
+T*
+(  - FS-01 mock data required before FS-02 e2e and Day-4 regression.) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 2952 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+( ) Tj
+T*
+(Task BE-01 \(Developer A\): Laundry Slot Override & Schedule Management API) Tj
+T*
+(  Summary: Allow laundry/master admins to block, extend, or shrink slot availability without) Tj
+T*
+(  editing machine definitions directly.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Create entity \(LaundrySlotOverride\) keyed by machine, date range, and slot indices with) Tj
+T*
+(      status \(BLOCKED, EXTENDED\).) Tj
+T*
+(    - Expose CRUD endpoints under /api/laundry/overrides restricted to LAUNDRY_ADMIN+ with bulk) Tj
+T*
+(      operations.) Tj
+T*
+(    - Update booking validation to honor overrides and treat blocked slots as unavailable.) Tj
+T*
+(    - Persist audit metadata \(createdBy, createdAt\) for traceability.) Tj
+T*
+(  Dependencies: None \(foundational story kick-started Day 1\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Overrides mutate availability without service restart.) Tj
+T*
+(    - Booking attempts against blocked slots return HTTP 400 with descriptive message.) Tj
+T*
+(    - Integration tests cover bookings near overrides and weekly limits.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Updated JPA entities, repositories, controllers.) Tj
+T*
+(    - Database migration or schema update notes.) Tj
+T*
+(    - REST contract examples for frontend.) Tj
+T*
+( ) Tj
+T*
+(Task BE-02 \(Developer A\): Rooftop Booking History & Audit Endpoints) Tj
+T*
+(  Summary: Expose user and admin APIs to list historical rooftop bookings/requests with status) Tj
+T*
+(  transitions.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Add pageable GET /api/rooftop/bookings/me returning future and past entries filtered by) Tj
+T*
+(      status.) Tj
+T*
+(    - Provide admin GET /api/rooftop/bookings with filters \(date range, approver, status\).) Tj
+T*
+(    - Extend RooftopBookingRequest with status enum \(REQUESTED, APPROVED, REJECTED, CANCELLED\)) Tj
+T*
+(      plus decision metadata.) Tj
+T*
+(    - Allow admins to reject requests with reason and residents to cancel pending requests) Tj
+T*
+(      within allowed window.) Tj
+T*
+(  Dependencies: Runs after BE-01 migration skeleton confirmed \(Day 1 afternoon\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - API responses include pagination metadata consumed by FE-04.) Tj
+T*
+(    - Security annotations enforce approval/rejection permissions.) Tj
+T*
+(    - Tests cover approval, rejection, cancellation flows.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Controller updates with method-level security.) Tj
+T*
+(    - Entity/DTO adjustments and migration notes.) Tj
+T*
+(    - API contract update \(Markdown/OpenAPI\).) Tj
+T*
+( ) Tj
+T*
+(Task BE-03 \(Developer A\): Dashboard Metrics Aggregator) Tj
+T*
+(  Summary: Provide aggregated metrics for the home dashboard \(counts, upcoming events, quota) Tj
+T*
+(  usage\).) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Implement /api/dashboard/summary returning next laundry slots, quota usage, pending) Tj
+T*
+(      requests, upcoming rooftop events.) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 2862 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+(    - Introduce short-lived caching \(e.g., Caffeine\) to keep response time under 200ms.) Tj
+T*
+(    - Support admin flag to return global stats when authorized.) Tj
+T*
+(  Dependencies: Feeds FE-01 dashboard \(target completion Day 2-3\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Endpoint returns deterministic schema with numeric counts and ISO timestamps.) Tj
+T*
+(    - Performance benchmark <200ms with 1k bookings dataset.) Tj
+T*
+(    - Role-based access verified via integration test.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - New service aggregator with unit tests.) Tj
+T*
+(    - API contract documented for frontend.) Tj
+T*
+( ) Tj
+T*
+(Task BE-04 \(Developer A\): Presidium Directory Backend) Tj
+T*
+(  Summary: Manage presidium members \(name, role, contact, portrait URL\) with public read and) Tj
+T*
+(  admin CRUD.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Create PresidiumMember entity with ordering and visibility flags.) Tj
+T*
+(    - Expose GET /api/presidium \(public\) and admin CRUD endpoints for MASTER_ADMIN.) Tj
+T*
+(    - Include optional bio/description field surfaced to frontend.) Tj
+T*
+(  Dependencies: Coordinate payload shape with FE-05 prior to implementation.) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - CRUD operations enforce optimistic locking or updated timestamp checks.) Tj
+T*
+(    - Validation rejects invalid URLs/missing required fields.) Tj
+T*
+(    - Provide default seed entry for demo environments.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Entity + repository + controller code.) Tj
+T*
+(    - Admin initializer update avoiding duplicates.) Tj
+T*
+( ) Tj
+T*
+(Task BE-05 \(Developer A\): Backend Test Coverage & Hardening) Tj
+T*
+(  Summary: Add automated coverage for booking flows and new endpoints.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Write Spring Boot slice tests for laundry and rooftop controllers.) Tj
+T*
+(    - Add integration tests covering overrides, history filters, dashboard metrics.) Tj
+T*
+(    - Introduce testcontainers-based Postgres profile for CI parity.) Tj
+T*
+(  Dependencies: Requires BE-01..BE-04 complete \(Day 3-4\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - ≥80% line coverage on laundry and rooftop packages.) Tj
+T*
+(    - Gradle tasks configured for unit + integration tests.) Tj
+T*
+(    - Tests executed successfully in CI pipeline.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Test sources with data builders.) Tj
+T*
+(    - Gradle configuration updates.) Tj
+T*
+( ) Tj
+T*
+(Task FE-01 \(Developer B\): Home Dashboard Experience) Tj
+T*
+(  Summary: Replace placeholder HomePage with data-driven dashboard using BE-03 summary.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Design responsive cards showing next laundry slot, quota progress, pending rooftop) Tj
+T*
+(      requests, quick actions.) Tj
+T*
+(    - Implement loading/error states consistent with design system.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 2831 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+(    - Include announcements panel leveraging static copy \(extendable later\).) Tj
+T*
+(  Dependencies: Depends on BE-03 contract \(mock Day 1, live Day 2\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Authenticated users see live data; guests view marketing copy.) Tj
+T*
+(    - Mobile layout stacks cards with accessible order.) Tj
+T*
+(    - React Testing Library coverage for formatting and skeleton states.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Updated HomePage.tsx and supporting components.) Tj
+T*
+(    - Screenshots/Storybook references for QA.) Tj
+T*
+( ) Tj
+T*
+(Task FE-02 \(Developer B\): Laundry Slot Management UI) Tj
+T*
+(  Summary: Provide admin interface to manage overrides from BE-01.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Add "Slot Overrides" window under AdminPage → Laundry.) Tj
+T*
+(    - Implement table/calendar visualising overrides per machine/date.) Tj
+T*
+(    - Wire create/update/delete flows with optimistic updates and toast feedback.) Tj
+T*
+(  Dependencies: Blocked on BE-01 \(target Day 2-3\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Admins can block slots and see immediate effect on schedule.) Tj
+T*
+(    - Form validation prevents overlapping/invalid ranges.) Tj
+T*
+(    - Jest tests cover API hook happy path and error handling.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - React Query hooks under features/laundry/overrides.) Tj
+T*
+(    - CSS modules consistent with design.) Tj
+T*
+( ) Tj
+T*
+(Task FE-03 \(Developer B\): Next Free Slots Buffer Fix) Tj
+T*
+(  Summary: Resolve TODO in NextFreeSlots component for previous-day buffers.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Adjust free-slot calculation to merge bookings returned with includeBuffer flag.) Tj
+T*
+(    - Add utilities to normalise booking dates/slots across day boundaries.) Tj
+T*
+(    - Display tooltip when slot partially occupied by previous-day usage.) Tj
+T*
+(  Dependencies: Uses existing endpoint \(complete by Day 2\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Adjacent buffered slots hidden or labelled unavailable.) Tj
+T*
+(    - Unit tests cover midnight boundary conditions.) Tj
+T*
+(    - Manual QA checklist updated for DST edge cases.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Updated NextFreeSlots.tsx and utilities.) Tj
+T*
+(    - Tests under features/laundry/__tests__.) Tj
+T*
+( ) Tj
+T*
+(Task FE-04 \(Developer B\): Rooftop History & Request Timeline UI) Tj
+T*
+(  Summary: Surface user rooftop booking/request history with filters.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Replace placeholder tab in HistoryPage with timeline grouped by month/status.) Tj
+T*
+(    - Enable cancellation of pending requests per BE-02 rules.) Tj
+T*
+(    - Implement pagination/infinite scroll for older records.) Tj
+T*
+(  Dependencies: Requires BE-02 \(target Day 3\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Length 2727 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+(    - History view paginates smoothly and supports lazy loading.) Tj
+T*
+(    - Actions update UI state without full reload.) Tj
+T*
+(    - Accessibility review ensures screen-reader friendly announcements.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - New components/hooks under features/rooftop/history.) Tj
+T*
+(    - Router/localization updates if needed.) Tj
+T*
+( ) Tj
+T*
+(Task FE-05 \(Developer B\): Presidium Page Content) Tj
+T*
+(  Summary: Populate PresidiumPage with data from BE-04.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Fetch presidium members and render cards \(name, role, contact, office hours\).) Tj
+T*
+(    - Provide fallback imagery when portrait missing.) Tj
+T*
+(    - Add admin-only edit link placeholder for future management UI.) Tj
+T*
+(  Dependencies: Depends on BE-04 \(Day 3\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Page passes Lighthouse accessibility score ≥90.) Tj
+T*
+(    - Graceful empty state messaging when no members configured.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Updated PresidiumPage.tsx and styling.) Tj
+T*
+(    - Unit tests for render and error states.) Tj
+T*
+( ) Tj
+T*
+(Task FE-06 \(Developer B\): UI Polish & Theme Consistency) Tj
+T*
+(  Summary: Ensure new components honor theme toggle and responsive behaviour.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Audit dark mode styles and adjust CSS variables.) Tj
+T*
+(    - Add focus states and keyboard navigation to admin tables/calendars.) Tj
+T*
+(    - Refine shared Button/Form components for new use cases.) Tj
+T*
+(  Dependencies: Runs alongside finish work \(Day 3-4\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - No WCAG AA colour contrast violations.) Tj
+T*
+(    - Keyboard-only interaction works across modals/forms.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - CSS module updates and documentation screenshots.) Tj
+T*
+( ) Tj
+T*
+(Task FS-01 \(Developer C\): Mock Data Generator) Tj
+T*
+(  Summary: Implement scripts/generate_mock_data.py to seed realistic demo/test data.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Generate users, machines, overrides, bookings, rooftop requests across edge cases.) Tj
+T*
+(    - Provide CLI flags for environment \(dev/staging\) and data volume.) Tj
+T*
+(    - Ensure passwords hashed when inserting directly.) Tj
+T*
+(  Dependencies: Needs schema confirmation from BE-01..BE-04 \(start Day 1 with stubs\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Script populates empty database via JDBC/REST in under 2 minutes.) Tj
+T*
+(    - Idempotent: supports reset flag to clean previous mock data.) Tj
+T*
+(    - README updated with usage instructions.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Executable script plus dependency notes.) Tj
+T*
+(    - Sample .env.dev with credentials.) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Length 2643 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+( ) Tj
+T*
+(Task FS-02 \(Developer C\): End-to-End Test Suite) Tj
+T*
+(  Summary: Automate critical flows using Playwright or Cypress.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Cover login/logout, booking creation/cancellation, override management, rooftop approvals.) Tj
+T*
+(    - Launch backend/frontend via docker-compose for deterministic runs.) Tj
+T*
+(    - Leverage FS-01 mock data for fixtures.) Tj
+T*
+(  Dependencies: Depends on key features being ready \(Day 3\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Headless CI execution under 10 minutes.) Tj
+T*
+(    - Screenshots/videos captured for failures.) Tj
+T*
+(    - Documented npm script \(npm run e2e\).) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - tests/e2e directory with config.) Tj
+T*
+(    - CI job invoking suite \(ties to FS-03\).) Tj
+T*
+( ) Tj
+T*
+(Task FS-03 \(Developer C\): CI/CD Pipeline Hardening) Tj
+T*
+(  Summary: Create workflows for linting, tests, builds, and artifact publication.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Stages: backend unit+integration, frontend lint+build, e2e tests.) Tj
+T*
+(    - Cache Gradle and npm dependencies to reduce runtime.) Tj
+T*
+(    - Publish build artifacts \(frontend dist, backend jar\) as workflow outputs.) Tj
+T*
+(  Dependencies: Requires BE-05 tests + FS-02 e2e \(Day 4\).) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Pipelines pass on main/feature branches with status badges.) Tj
+T*
+(    - Failing tests block merges via required checks.) Tj
+T*
+(    - Documentation for CI secrets/environment variables.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - .github/workflows YAML files.) Tj
+T*
+(    - README section describing pipeline/troubleshooting.) Tj
+T*
+( ) Tj
+T*
+(Task FS-04 \(Developer C\): Unified Local Development Tooling) Tj
+T*
+(  Summary: Simplify onboarding and environment parity.) Tj
+T*
+(  Technical Notes:) Tj
+T*
+(    - Extend compose.yml to include frontend dev container or scripts for simultaneous startup.) Tj
+T*
+(    - Create makefile or npm script orchestrating docker compose, backend bootRun, frontend dev) Tj
+T*
+(      server.) Tj
+T*
+(    - Document SSL/CORS troubleshooting for cross-host access.) Tj
+T*
+(  Dependencies: Parallel track across days 1-3.) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - One-command startup for full stack.) Tj
+T*
+(    - Works on macOS/Linux/Windows WSL with prerequisites documented.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - Updated compose files or new root-level compose.) Tj
+T*
+(    - DEV_SETUP.md instructions.) Tj
+T*
+( ) Tj
+T*
+(Task FS-05 \(Developer C\): Observability & Logging Enhancements) Tj
+T*
+(  Summary: Improve insight into booking operations.) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Length 2357 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+72 800 Td
+(  Technical Notes:) Tj
+T*
+(    - Configure Spring Boot actuator endpoints with appropriate security.) Tj
+T*
+(    - Add structured logging \(JSON\) for booking lifecycle events.) Tj
+T*
+(    - Provide placeholder Prometheus/Grafana configuration for future deployment.) Tj
+T*
+(  Dependencies: Finalize Day 4 after features stable.) Tj
+T*
+(  Acceptance Criteria:) Tj
+T*
+(    - Logs include booking ID, user, machine, outcome, latency.) Tj
+T*
+(    - README documents metrics enablement.) Tj
+T*
+(    - Health endpoint accessible only with authentication.) Tj
+T*
+(  Deliverables:) Tj
+T*
+(    - application.properties updates and logging config.) Tj
+T*
+(    - docs/observability.md.) Tj
+T*
+( ) Tj
+T*
+(Quality & Release Checklist \(Developer C ownership, all sign-off\):) Tj
+T*
+(  - Security review for new endpoints \(authentication, authorization, CSRF implications\).) Tj
+T*
+(  - Database migration tested against existing data snapshot.) Tj
+T*
+(  - Performance smoke test: booking creation under 50 concurrent users.) Tj
+T*
+(  - Rollback plan documented for overrides feature.) Tj
+T*
+(  - User documentation updated \(README plus in-app help copy if applicable\).) Tj
+T*
+( ) Tj
+T*
+(Communication Cadence:) Tj
+T*
+(  - Daily 15-minute stand-up at 09:00 and integration review at 16:00 focused on task IDs.) Tj
+T*
+(  - Dedicated Slack/Teams channel for sub-30-minute blocker resolution.) Tj
+T*
+(  - Day-4 stakeholder demo using mock data set to validate acceptance criteria.) Tj
+T*
+(  - Use shared tracking board \(e.g., Jira\) keyed by task IDs above.) Tj
+T*
+( ) Tj
+T*
+(Risks & Mitigations:) Tj
+T*
+(  - Schema changes overlapping tasks - Mitigation: feature-flag overrides and supply fallback) Tj
+T*
+(    queries for legacy clients.) Tj
+T*
+(  - Limited test data diversity - Mitigation: extend FS-01 script with edge-case scenarios) Tj
+T*
+(    \(overlapping slots, quota near limits\).) Tj
+T*
+(  - Frontend performance regression - Mitigation: enforce bundle analyzer check during FE-06 and) Tj
+T*
+(    defer heavy modules to lazy loading.) Tj
+T*
+( ) Tj
+T*
+(Sign-off Requirements:) Tj
+T*
+(  - All tasks BE-01..FS-05 merged with approvals and QA evidence attached.) Tj
+T*
+(  - Automated pipelines green on main branch for final 24 hours.) Tj
+T*
+(  - Product owner sign-off on dashboard, slot management, rooftop history demos.) Tj
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000175 00000 n 
+0000000303 00000 n 
+0000000431 00000 n 
+0000000559 00000 n 
+0000000687 00000 n 
+0000000815 00000 n 
+0000000943 00000 n 
+0000001071 00000 n 
+0000004437 00000 n 
+0000007441 00000 n 
+0000010355 00000 n 
+0000013238 00000 n 
+0000016017 00000 n 
+0000018712 00000 n 
+0000021121 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+21192
+%%EOF
