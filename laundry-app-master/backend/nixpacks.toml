@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ['...', 'gradle', 'jdk21']
+
+[phases.build]
+cmds = ['gradle clean bootJar']
+
+[phases.install]
+cmds = ['mkdir -p /app/build/libs', 'cp build/libs/*.jar /app/build/libs/']
+
+[start]
+cmd = 'java -jar build/libs/backend-0.0.1-SNAPSHOT.jar'
