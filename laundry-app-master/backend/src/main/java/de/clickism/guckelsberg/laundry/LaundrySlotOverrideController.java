@@ -57,13 +57,13 @@ public class LaundrySlotOverrideController {
             @PathVariable Long id,
             @RequestBody LaundrySlotOverride.UpdateDto dto
     ) {
-        return overrideRepository.findById(id)
-                .map(existing -> {
-                    applyUpdate(existing, dto);
-                    overrideRepository.save(existing);
-                    return ResponseEntity.ok(existing.toDto());
-                })
-                .orElseGet(() -> ResponseEntity.status(SC_NOT_FOUND).body("Override not found."));
+        LaundrySlotOverride override = overrideRepository.findById(id).orElse(null);
+        if (override == null) {
+            return ResponseEntity.status(SC_NOT_FOUND).body("Override not found.");
+        }
+        applyUpdate(override, dto);
+        overrideRepository.save(override);
+        return ResponseEntity.ok(override.toDto());
     }
 
     @DeleteMapping("/{id}")

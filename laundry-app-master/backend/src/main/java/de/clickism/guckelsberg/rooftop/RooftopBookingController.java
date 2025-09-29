@@ -73,7 +73,7 @@ public class RooftopBookingController {
     @PreAuthorize("hasRole('ROOFTOP_ADMIN')")
     @Transactional
     @PostMapping
-    public ResponseEntity<RooftopBooking> createBooking(
+    public ResponseEntity<?> createBooking(
             @RequestBody RooftopBooking.Dto dto,
             Authentication auth
     ) {
