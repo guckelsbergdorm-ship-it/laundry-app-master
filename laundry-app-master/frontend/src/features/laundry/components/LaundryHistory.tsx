@@ -39,7 +39,7 @@ export function LaundryHistory() {
                 },
                 {
                   key: 'slotStart',
-                  valueRender: (slot) => prettifySlot(slot)
+                  valueRender: (slot) => prettifySlot(Number(slot))
                 }
               ]
             ]}

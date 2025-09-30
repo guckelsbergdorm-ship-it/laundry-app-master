@@ -95,7 +95,7 @@ export function ManageRequests() {
             [
               {
                 key: 'date',
-                valueRender: (value) => formatDateRelativeToToday(new Date(value))
+                valueRender: (value) => value ? formatDateRelativeToToday(new Date(value)) : ''
               },
               'reason',
               'contact',

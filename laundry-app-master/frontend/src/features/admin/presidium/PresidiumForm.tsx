@@ -2,7 +2,7 @@ import {Form} from "../../../components/Form.tsx";
 import type {PresidiumMember} from "../../presidium/models.ts";
 import {useCreatePresidiumMember, useUpdatePresidiumMember} from "../../presidium/queries.ts";
 
-type PresidiumFormValues = PresidiumMember & {
+type PresidiumFormValues = Omit<PresidiumMember, 'visible' | 'displayOrder'> & {
   visible: string;
   displayOrder: number | string;
 };
@@ -11,7 +11,7 @@ export function PresidiumForm({variant = 'create', member}: {variant?: 'create' 
   const {mutate: createMember} = useCreatePresidiumMember();
   const {mutate: updateMember} = useUpdatePresidiumMember();
 
-  const initialValue: Partial<PresidiumFormValues> | undefined = member
+  const initialValue: Partial<PresidiumFormValues> = member
     ? {
       ...member,
       visible: member.visible ? 'true' : 'false',
