@@ -1,8 +1,11 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
+
 export async function fetchWithCredentials(url: string, options?: RequestInit & { timeout?: number }) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), options?.timeout ?? 5000);
+  const fullUrl = API_BASE_URL ? `${API_BASE_URL}${url}` : url;
   try {
-    return await fetch(url, {
+    return await fetch(fullUrl, {
       credentials: 'include',
       ...options,
       signal: controller.signal,
